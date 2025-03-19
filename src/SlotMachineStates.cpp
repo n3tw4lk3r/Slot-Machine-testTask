@@ -5,6 +5,7 @@
 #include <string>
 
 #include <SDL2/SDL.h>
+#include <thread>
 
 #include "SlotMachine.hpp"
 #include "SlotMachineState.hpp"
@@ -49,7 +50,8 @@ void IdleState::doWork(SlotMachine* slotMachine) {
         std::string text = "Your prize: " + prizeText;
         slotMachine->awardText.render(slotMachine->renderer, text);
         SDL_RenderPresent(slotMachine->renderer);
-        SDL_Delay(25);
+        // SDL_Delay(200);
+        std::this_thread::sleep_for(std::chrono::milliseconds(250));
     }
 }
 
@@ -108,7 +110,8 @@ void SpinningState::doWork(SlotMachine* slotMachine) {
         slotMachine->stopButton.render(slotMachine->renderer,
                                        "assets/stop.png");
         SDL_RenderPresent(slotMachine->renderer);
-        SDL_Delay(25);
+        // SDL_Delay(200);
+        std::this_thread::sleep_for(std::chrono::milliseconds(250));
         if (std::all_of(reelsStopped.begin(), reelsStopped.end(),
                         [](bool x) { return x; })) {
             break;
