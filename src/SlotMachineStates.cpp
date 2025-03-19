@@ -3,9 +3,9 @@
 #include <algorithm>
 #include <chrono>
 #include <string>
+#include <thread>
 
 #include <SDL2/SDL.h>
-#include <thread>
 
 #include "SlotMachine.hpp"
 #include "SlotMachineState.hpp"
