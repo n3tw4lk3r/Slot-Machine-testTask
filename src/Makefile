@@ -3,7 +3,7 @@ OBJS = $(wildcard *.cpp)
 CC = g++
 
 COMPILER_FLAGS = -Wall -Werror -std=c++17 `sdl2-config --cflags --libs` \
-				 -lSDL2_image -lSDL2_ttf -g
+				 -lSDL2_image -lSDL2_ttf
 
 LINKER_FLAGS = -lSDL2
 
