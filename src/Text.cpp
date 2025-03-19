@@ -41,7 +41,6 @@ Text::~Text()
 {
     if (textureLoaded)
         SDL_DestroyTexture(texture);
-    
 }
 
 void Text::closeFont() {
